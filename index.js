@@ -11,6 +11,10 @@ module.exports = app => {
     return context.github.issues.createComment(issueComment)
   })
 
+  app.on('push', async context => {
+    app.log(context)
+  })
+
   // For more information on building apps:
   // https://probot.github.io/docs/
 
