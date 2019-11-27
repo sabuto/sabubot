@@ -11,10 +11,10 @@ module.exports = app => {
     app.log(context)
   });
 
-  // app.on('issues.opened', label)
+  app.on('issues.opened', label)
   
   app.on('issues.opened', async context => { 
-  	app.log(context.payload.issue.number)   
+  	// app.log(context.payload.issue.number)   
     // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
     // return context.github.issues.createComment(issueComment)
   });
