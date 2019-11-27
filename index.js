@@ -1,3 +1,4 @@
+const Labeler = require("./lib/labeler")
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
@@ -9,12 +10,14 @@ module.exports = app => {
   app.on('push', async context => {
     app.log(context)
   });
+
+  app.on('issues.opened', label)
   
-  app.on('issues.opened', async context => { 
-  	app.log(context)   
-    // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
-    // return context.github.issues.createComment(issueComment)
-  });
+  // app.on('issues.opened', async context => { 
+  // 	app.log(context)   
+  //   // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
+  //   // return context.github.issues.createComment(issueComment)
+  // });
 
 
   // For more information on building apps:
@@ -22,4 +25,10 @@ module.exports = app => {
 
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
+
+  async function label(context) {
+  	const labeler = new Labeler(context, app.log)
+
+  	await labeler.init()
+  }
 }
