@@ -22,9 +22,9 @@
   },
   "dependencies": {
     "probot": "9.6.6",
-    "ignore": "^5.1.2",
-    "js-yaml": "^3.13.1",
-    "normalize-for-search": "^2.1.0"
+    "ignore": "5.1.4",
+    "js-yaml": "3.13.1",
+    "normalize-for-search": "2.1.0"
   },
   "devDependencies": {
     "jest": "24.9.0",
