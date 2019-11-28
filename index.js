@@ -38,16 +38,16 @@ module.exports = app => {
   }
 
   async function assign(context) {
-    // const assigner = new Assigner(app.log, context)
+    const assigner = new Assigner(app.log, context)
 
-    // await assigner.init()
+    await assigner.init()
 
-    // await assigner.assign()
+    await assigner.assign()
 
-    const tempParams = context.issue()
-    const owner = tempParams.owner
+    // const tempParams = context.issue()
+    // const owner = tempParams.owner
 
-    const addAssigneeParams = context.issue({ assignees: [owner]})
-    await context.github.issues.addAssignees(addAssigneeParams)
+    // const addAssigneeParams = context.issue({ assignees: [owner]})
+    // await context.github.issues.addAssignees(addAssigneeParams)
   }
 }
