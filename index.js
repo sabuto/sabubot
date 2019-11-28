@@ -30,7 +30,7 @@ module.exports = app => {
   // https://probot.github.io/docs/development/
 
   async function label(context) {
-	const labeler = new Labeler(app.log, context)
+	const labeler = new Labeler(app, context)
 
   	await labeler.init()
 
