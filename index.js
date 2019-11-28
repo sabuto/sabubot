@@ -42,6 +42,6 @@ module.exports = app => {
 
     await assigner.init()
 
-    await assigner.assign()
+    // await assigner.assign()
   }
 }
