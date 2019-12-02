@@ -1,29 +1,29 @@
-// const commands = require('probot-commands')
+const commands = require('probot-commands')
 const Labeler = require("./lib/labeler")
 const Assigner = require("./lib/assigner")
-const Command = require("./lib/commands")
+// const Command = require("./lib/commands")
 
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
  */
-module.exports = app => {
+module.exports = robot => {
   // Your code here
-  app.log('Yay, the app was loaded!')
+  robot.log('Yay, the app was loaded!')
 
-  // commands(robot, 'label', (context, command) => {
-  //   robot.log("command", command)
-  // })
+  commands(robot, 'label', (context, command) => {
+    robot.log("command", command)
+  })
 
   // app.on('push', async context => {
   //   app.log(context)
   // });
 
-  app.on('issues.opened', label)
-  app.on('issues.edited', label)
-  app.on('issue_comment.created', async context => {
-    app.log("comment")
-  })
+  robot.on('issues.opened', label)
+  robot.on('issues.edited', label)
+  // app.on('issue_comment.created', async context => {
+  //   app.log("comment")
+  // })
   // app.on('issues.opened', async context => { 
   // 	// app.log(context.payload.issue.number)   
   //   // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
@@ -38,7 +38,7 @@ module.exports = app => {
   // https://probot.github.io/docs/development/
 
  async function comment(context) {
-   const command = new Command(app, context)
+   const command = new Command(robot, context)
 
    await command.init()
 
@@ -46,7 +46,7 @@ module.exports = app => {
  }
 
   async function label(context) {
-	const labeler = new Labeler(app, context)
+	const labeler = new Labeler(robot, context)
 
   	await labeler.init()
 
@@ -54,7 +54,7 @@ module.exports = app => {
   }
 
   async function assign(context) {
-    const assigner = new Assigner(app.log, context)
+    const assigner = new Assigner(robot.log, context)
 
     await assigner.init()
 
