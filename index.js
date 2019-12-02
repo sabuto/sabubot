@@ -21,7 +21,7 @@ module.exports = app => {
 
   app.on('issues.opened', label)
   app.on('issues.edited', label)
-  app.on('issue_comment.*', async context => {
+  app.on('issue_comment.created', async context => {
     app.log("comment")
   })
   // app.on('issues.opened', async context => { 
