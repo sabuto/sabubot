@@ -1,6 +1,6 @@
 const Labeler = require("./lib/labeler")
 const Assigner = require("./lib/assigner")
-const commands = require("probot-commands")
+const commands = require('probot-commands')
 
 /**
  * This is the main entrypoint to your Probot app
