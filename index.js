@@ -6,7 +6,7 @@ const commands = require("probot-commands")
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
  */
-module.exports = robot => {
+module.exports = async robot => {
   // Your code here
   robot.log('Yay, the app was loaded!')
 
@@ -16,7 +16,7 @@ module.exports = robot => {
 
   robot.on('issues.opened', label)
   robot.on('issues.edited', label)
-  commands(robot, 'close', (context, command) => {
+  commands(robot, 'close', async (context, command) => {
     return robot.log.info("recieved command", command)
   })
   // app.on('issues.opened', async context => { 
