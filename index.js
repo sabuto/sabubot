@@ -10,15 +10,16 @@ module.exports = async robot => {
   // Your code here
   robot.log('Yay, the app was loaded!')
 
+  commands(robot, 'label', async (context, command) => {
+    robot.log("command", command)
+  })
+
   // app.on('push', async context => {
   //   app.log(context)
   // });
 
   robot.on('issues.opened', label)
   robot.on('issues.edited', label)
-  commands(robot, 'label', async (context, command) => {
-    robot.log("command", command)
-  })
   // app.on('issues.opened', async context => { 
   // 	// app.log(context.payload.issue.number)   
   //   // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
