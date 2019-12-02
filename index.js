@@ -1,16 +1,16 @@
+const commands = require('probot-commands')
 const Labeler = require("./lib/labeler")
 const Assigner = require("./lib/assigner")
-const commands = require('probot-commands')
 
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
  */
-module.exports = async robot => {
+module.exports = robot => {
   // Your code here
   robot.log('Yay, the app was loaded!')
 
-  commands(robot, 'label', async (context, command) => {
+  commands(robot, 'label', (context, command) => {
     robot.log("command", command)
   })
 
