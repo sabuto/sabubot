@@ -21,7 +21,9 @@ module.exports = app => {
 
   app.on('issues.opened', label)
   app.on('issues.edited', label)
-  app.on('issue_comment.*', comment)
+  app.on('issue_comment.*', async context => {
+    app.log("comment")
+  })
   // app.on('issues.opened', async context => { 
   // 	// app.log(context.payload.issue.number)   
   //   // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
