@@ -16,8 +16,8 @@ module.exports = async robot => {
 
   robot.on('issues.opened', label)
   robot.on('issues.edited', label)
-  commands(robot, 'close', async (context, command) => {
-    return robot.log.info("recieved command", command)
+  commands(robot, 'label', (context, command) => {
+    robot.log("command", command)
   })
   // app.on('issues.opened', async context => { 
   // 	// app.log(context.payload.issue.number)   
