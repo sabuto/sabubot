@@ -11,8 +11,8 @@ module.exports = robot => {
   // Your code here
   robot.log('Yay, the app was loaded!')
 
-  commands(robot, 'label', (context, command) => {
-    robot.log("command", command)
+  commands(robot, 'close', (context, command) => {
+    robot.log("command", command.arguments)
   })
 
   // app.on('push', async context => {
