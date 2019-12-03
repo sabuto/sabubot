@@ -12,7 +12,7 @@ module.exports = robot => {
   robot.log('Yay, the app was loaded!')
 
   commands(robot, 'label', (context, command) => {
-    robot.log("command", command.arguments)
+    robot.log("command", command)
   })
 
   // app.on('push', async context => {
