@@ -22,6 +22,7 @@
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
+    "to-markdown": "^3.1.1",
     "ignore": "5.1.2",
     "js-yaml": "3.13.1",
     "normalize-for-search": "2.1.0",
