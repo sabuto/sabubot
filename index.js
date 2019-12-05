@@ -2,6 +2,7 @@ const commands = require('probot-commands')
 const Labeler = require("./lib/labeler")
 const Assigner = require("./lib/assigner")
 const Mover = require("./lib/mover")
+const Closer = require("./lib/closer")
 // const Command = require("./lib/commands")
 
 /**
@@ -15,7 +16,7 @@ module.exports = robot => {
   commands(robot, 'move', (context, command) => {
     const mover = new Mover(robot, context, command)
 
-    mover.init()
+    await mover.init()
     // mover.move()
   })
 
