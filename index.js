@@ -14,10 +14,7 @@ module.exports = robot => {
   robot.log('Yay, the app was loaded!')
 
   commands(robot, 'move', (context, command) => {
-    const mover = new Mover(robot, context, command)
-
-    await mover.init()
-    // mover.move()
+    move
   })
 
   // app.on('push', async context => {
@@ -70,5 +67,11 @@ module.exports = robot => {
 
     // const addAssigneeParams = context.issue({ assignees: [owner]})
     // await context.github.issues.addAssignees(addAssigneeParams)
+  }
+
+  async function move (robot, context, command) {
+    const mover = new Mover(robot, context, command)
+
+    await mover.init()
   }
 }
