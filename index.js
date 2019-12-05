@@ -14,7 +14,7 @@ module.exports = robot => {
   robot.log('Yay, the app was loaded!')
 
   commands(robot, 'move', (context, command) => {
-    move
+    this.move(robot, context, command)
   })
 
   // app.on('push', async context => {
