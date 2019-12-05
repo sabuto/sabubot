@@ -13,8 +13,10 @@ module.exports = robot => {
   // Your code here
   robot.log('Yay, the app was loaded!')
 
-  commands(robot, 'move', (context, command) => {
-    await this.move(robot, context, command)
+  commands(robot, 'move', async (context, command) => {
+    const mover = new Mover(robot, context, command)
+
+    await mover.init()
   })
 
   // app.on('push', async context => {
@@ -70,8 +72,6 @@ module.exports = robot => {
   }
 
   async function move (robot, context, command) {
-    const mover = new Mover(robot, context, command)
 
-    await mover.init()
   }
 }
