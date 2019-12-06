@@ -19,6 +19,12 @@ module.exports = robot => {
     await mover.init()
   })
 
+  commands(robot, 'close', async (context, command) => {
+    const closer = new Closer(robot, context, command)
+
+    await closer.init()
+  })
+
   // app.on('push', async context => {
   //   app.log(context)
   // });
