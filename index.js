@@ -29,8 +29,8 @@ module.exports = robot => {
   //   app.log(context)
   // });
 
-  robot.on('issues.opened', label)
-  robot.on('issues.edited', label)
+  robot.on('issues.opened', issueOpened)
+  robot.on('issues.edited', issueEdited)
   // app.on('issue_comment.created', async context => {
   //   app.log("comment")
   // })
@@ -55,27 +55,23 @@ module.exports = robot => {
    await command.processCommand()
  }
 
-  async function label(context) {
-	const labeler = new Labeler(robot, context)
+ async function issueOpened(context) {
+   const labeler = new Labeler(robot, context)
+   const assigner = new Assigner(robot.log, context)
 
-  	await labeler.init()
+    await labeler.init()
 
     await labeler.label()
-  }
-
-  async function assign(context) {
-    const assigner = new Assigner(robot.log, context)
 
     await assigner.init()
 
     await assigner.assign()
+ }
 
-    // const tempParams = context.issue()
-    // const owner = tempParams.owner
+ async function issueEdited(context) {
+  await issueOpened(context)
+ }
 
-    // const addAssigneeParams = context.issue({ assignees: [owner]})
-    // await context.github.issues.addAssignees(addAssigneeParams)
-  }
 
   async function move (robot, context, command) {
 
