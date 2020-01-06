@@ -1,4 +1,4 @@
-https://github.com/andrewlock/auto-assign-issues/blob/master/test/auto-assign-issue.test.ts
+// https://github.com/andrewlock/auto-assign-issues/blob/master/test/auto-assign-issue.test.ts
 
 const nock = require('nock')
 // Requiring our app implementation
