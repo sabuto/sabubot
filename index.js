@@ -34,12 +34,11 @@ module.exports = robot => {
   // app.on('issue_comment.created', async context => {
   //   app.log("comment")
   // })
-  // app.on('issues.opened', async context => { 
-  // 	// app.log(context.payload.issue.number)   
-  //   // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
-  //   // return context.github.issues.createComment(issueComment)
+  // app.on('issues.opened', async context => {
+  // app.log(context.payload.issue.number)
+  // const issueComment = context.issue({ body: 'Thank you for contributing to the repo, someone will be along shortly for some more information or a fix!' })
+  // return context.github.issues.createComment(issueComment)
   // });
-
 
   // For more information on building apps:
   // https://probot.github.io/docs/
@@ -47,17 +46,17 @@ module.exports = robot => {
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
 
- async function issueOpened(context) {
-   const labeler = new Labeler(robot, context)
-   const assigner = new Assigner(robot.log, context)
+ async function issueOpened (context) {
+  const labeler = new Labeler(robot, context)
+  const assigner = new Assigner(robot.log, context)
 
-    await labeler.init()
+  await labeler.init()
 
-    await labeler.label()
+  await labeler.label()
 
-    await assigner.init()
+  await assigner.init()
 
-    await assigner.assign()
+  await assigner.assign()
  }
 
  async function issueEdited(context) {
