@@ -11,34 +11,25 @@ const path = require('path')
 
 describe('My Probot app', () => {
   let probot
-  let mockCert
-
-  beforeAll((done) => {
-    fs.readFile(path.join(__dirname, 'fixtures/mock-cert.pem'), (err, cert) => {
-      if (err) return done(err)
-      mockCert = cert
-      done()
-    })
-  })
 
   beforeEach(() => {
     nock.disableNetConnect()
-    probot = new Probot({ id: 123, cert: mockCert })
+    probot = createProbot({ id: 1, cert: 'test', githubToken: 'test' })
     // Load our app into probot
     probot.load(myProbotApp)
   })
 
-  test('assigns repo owner when issue is created or edited when no assignee is present', async (done) => {
+  test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
     const ownerAssignedBody = { assignees: ['sabutoss'] }
 
     // Test that we correctly return a test token
     nock('https://api.github.com')
-      .get('/app/installations/2/access_tokens')
+      .post('/app/installations/2/access_tokens')
       .reply(200, { token: 'hhasdhashdhasdhasdh' })
 
     nock('https://api.github.com')
       .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        done(expect(body).toMatchObject(ownerAssignedBody))
+        expect(body).toMatchObject(ownerAssignedBody)
         return true
       })
       .reply(200)
