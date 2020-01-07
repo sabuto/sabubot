@@ -1,8 +1,8 @@
 const commands = require('probot-commands')
-const Labeler = require("./lib/labeler")
-const Assigner = require("./lib/assigner")
-const Mover = require("./lib/mover")
-const Closer = require("./lib/closer")
+const Labeler = require('./lib/labeler')
+const Assigner = require('./lib/assigner')
+const Mover = require('./lib/mover')
+const Closer = require('./lib/closer')
 // const Command = require("./lib/commands")
 
 /**
