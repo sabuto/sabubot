@@ -29,7 +29,7 @@ describe('My Probot app', () => {
   })
 
   test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
-    const ownerAssignedBody = { 'assignees': ['sabuto'] }
+    const ownerAssignedBody = { 'assignees': ['sabutoss'] }
 
     // Test that we correctly return a test token
     nock('https://api.github.com')
