@@ -5,7 +5,7 @@ const nock = require('nock')
 const myProbotApp = require('..')
 const { Probot } = require('probot')
 // Requiring our fixtures
-const payload = require('./fixtures/issues.opened')
+// const payload = require('./fixtures/issues.opened')
 const fs = require('fs')
 const path = require('path')
 
