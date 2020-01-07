@@ -3,11 +3,9 @@
 const nock = require('nock')
 // Requiring our app implementation
 const myProbotApp = require('..')
-const { Probot, createProbot } = require('probot')
+const { createProbot } = require('probot')
 // Requiring our fixtures
 const payload = require('./fixtures/issues.opened')
-const fs = require('fs')
-const path = require('path')
 
 describe('My Probot app', () => {
   let probot
@@ -20,7 +18,7 @@ describe('My Probot app', () => {
   })
 
   test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
-    const ownerAssignedBody = { assignees: ['sabutoss'] }
+    const ownerAssignedBody = { assignees: ['hsdgsdgfdgksfgksdgfksdgkf sdf dsgf dgsfkg dsf ds'] }
 
     // Test that we correctly return a test token
     nock('https://api.github.com')
