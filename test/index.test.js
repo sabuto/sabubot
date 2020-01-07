@@ -3,7 +3,7 @@
 const nock = require('nock')
 // Requiring our app implementation
 const myProbotApp = require('..')
-const { Probot } = require('probot')
+const { Probot, createProbot } = require('probot')
 // Requiring our fixtures
 const payload = require('./fixtures/issues.opened')
 const fs = require('fs')
