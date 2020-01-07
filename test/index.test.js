@@ -44,7 +44,7 @@ describe('My Probot app', () => {
       .reply(200)
 
       // Recieve a webhook event
-      await probot.recieve({ name: 'issues', payload})
+      await probot.receive({ name: 'issues', payload})
   })
 
   test('2 + 2 = 4', async () => {
