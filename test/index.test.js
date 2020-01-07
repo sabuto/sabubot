@@ -18,8 +18,6 @@ describe('My Probot app', () => {
   })
 
   test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
-    const ownerAssignedBody = { assignees: ['hsdgsdgfdgksfgksdgfksdgkf sdf dsgf dgsfkg dsf ds'] }
-
     // Test that we correctly return a test token
     nock('https://api.github.com')
       .post('/app/installations/2/access_tokens')
@@ -27,14 +25,13 @@ describe('My Probot app', () => {
 
     nock('https://api.github.com')
       .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        //expect(body).toMatchObject(ownerAssignedBody)
-        console.log(body)
+        expect(body.issue.assignees.login).toEqual('Hallo')
         return true
       })
       .reply(200)
 
-      // Recieve a webhook event
-      await probot.receive({ name: 'issues', payload})
+    // Recieve a webhook event
+    await probot.receive({ name: 'issues', payload})
   })
 
   test('2 + 2 = 4', async () => {
