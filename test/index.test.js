@@ -5,7 +5,7 @@ const nock = require('nock')
 const myProbotApp = require('..')
 const { Probot } = require('probot')
 // Requiring our fixtures
-// const payload = require('./fixtures/issues.opened')
+const payload = require('./fixtures/issues.opened')
 const fs = require('fs')
 const path = require('path')
 
@@ -28,7 +28,7 @@ describe('My Probot app', () => {
     probot.load(myProbotApp)
   })
 
-  test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
+  test('assigns repo owner when issue is created or edited when no assignee is present', async (done) => {
     const ownerAssignedBody = { assignees: ['sabutoss'] }
 
     // Test that we correctly return a test token
@@ -38,14 +38,17 @@ describe('My Probot app', () => {
 
     nock('https://api.github.com')
       .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        expect(body).toMatchObject(ownerAssignedBody)
+        done(expect(body).toMatchObject(ownerAssignedBody))
         return true
       })
       .reply(200)
+
+      // Recieve a webhook event
+      await probot.recieve({ name: 'issues', payload})
   })
 
   test('2 + 2 = 4', async () => {
-    expect(2 + 2).toBe(5);
+    expect(2 + 2).toBe(4);
   })
 
   afterEach(() => {
