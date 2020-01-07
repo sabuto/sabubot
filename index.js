@@ -59,7 +59,7 @@ module.exports = robot => {
     await assigner.assign()
   }
 
-  async function issueEdited(context) {
+  async function issueEdited (context) {
     await issueOpened(context)
   }
 }
