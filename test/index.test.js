@@ -34,14 +34,14 @@ describe('My Probot app', () => {
     // Test that we correctly return a test token
     nock('https://api.github.com')
       .get('/app/installations/2/access_tokens')
-      .reply(200, { token: 'test' })
+      .reply(200, { token: 'hhasdhashdhasdhasdh' })
 
-    nock('https://api.github.com')
-      .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        expect(body).toMatchObject(ownerAssignedBody)
-        return true
-      })
-      .reply(200)
+    // nock('https://api.github.com')
+    //   .get('/repos/sabuto/bot-test/issues/25', (body) => {
+    //     expect(body).toMatchObject(ownerAssignedBody)
+    //     return true
+    //   })
+    //   .reply(200)
   })
 
   afterEach(() => {
