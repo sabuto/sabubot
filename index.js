@@ -47,14 +47,6 @@ module.exports = robot => {
   // To get your app running against GitHub, see:
   // https://probot.github.io/docs/development/
 
- async function comment(context) {
-   const command = new Command(robot, context)
-
-   await command.init()
-
-   await command.processCommand()
- }
-
  async function issueOpened(context) {
    const labeler = new Labeler(robot, context)
    const assigner = new Assigner(robot.log, context)
@@ -71,9 +63,4 @@ module.exports = robot => {
  async function issueEdited(context) {
   await issueOpened(context)
  }
-
-
-  async function move (robot, context, command) {
-
-  }
 }
