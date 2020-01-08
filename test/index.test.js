@@ -18,21 +18,25 @@ describe('My Probot app', () => {
   })
 
   test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
-    const ownerAssignedBody = { assignees: ['sabuto'] }
-    // Test that we correctly return a test token
-    nock('https://api.github.com')
-      .post('/app/installations/2/access_tokens')
-      .reply(200, { token: 'test' })
+    // const ownerAssignedBody = { assignees: ['sabuto'] }
+    // // Test that we correctly return a test token
+    // nock('https://api.github.com')
+    //   .post('/app/installations/2/access_tokens')
+    //   .reply(200, { token: 'test' })
 
-    nock('https://api.github.com')
-      .get('/repos/sabuto/bot-test/issues/1', (body) => {
-        expect(body).toMatchObject(ownerAssignedBody)
-        return true
-      })
-      .reply(200)
+    // nock('https://api.github.com')
+    //   .get('/repos/sabuto/bot-test/issues/1', (body) => {
+    //     expect(body).toMatchObject(ownerAssignedBody)
+    //     return true
+    //   })
+    //   .reply(200)
 
     // Recieve a webhook event
     await probot.receive({ name: 'issues', payload })
+  })
+
+  test('close comment closes the thread', async () => {
+    
   })
 
   afterEach(() => {
