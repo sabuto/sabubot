@@ -25,13 +25,13 @@ describe('My Probot app', () => {
 
     nock('https://api.github.com')
       .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        expect(body.issue.assignees.login).toEqual('Hallo')
+        expect(body.issue.assignees.login).toBe('Hallo')
         return true
       })
       .reply(200)
 
     // Recieve a webhook event
-    await probot.receive({ name: 'issues', payload})
+    await probot.receive({ name: 'issues', payload })
   })
 
   test('2 + 2 = 4', async () => {
