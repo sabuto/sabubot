@@ -25,7 +25,7 @@ describe('My Probot app', () => {
       .reply(200, { token: 'test' })
 
     nock('https://api.github.com')
-      .get('/repos/sabuto/bot-test/issues/1/assignees', (body) => {
+      .get('/repos/sabuto/bot-test/issues/1', (body) => {
         expect(body.issue.assignees).toMatchObject(ownerAssignedBody)
         return true
       })
