@@ -25,7 +25,7 @@ describe('My Probot app', () => {
 
     nock('https://api.github.com')
       .get('/repos/sabuto/bot-test/issues/25', (body) => {
-        expect(body.issue.assignees.login).toBe('Hallo')
+        expect(body.issue.assignees).toMatchObject({ login: 'Hallo' })
         return true
       })
       .reply(200)
