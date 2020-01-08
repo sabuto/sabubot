@@ -3,8 +3,7 @@ const Labeler = require('./lib/labeler')
 const Assigner = require('./lib/assigner')
 const Mover = require('./lib/mover')
 const Closer = require('./lib/closer')
-const Deleter = require('./lib/deleter')
-// const Command = require("./lib/commands")
+const deleteMerged = require('./lib/deleter')
 
 /**
  * This is the main entrypoint to your Probot app
@@ -32,7 +31,7 @@ module.exports = robot => {
 
   robot.on('issues.opened', issueOpened)
   robot.on('issues.edited', issueEdited)
-  robot.on('pull_request.closed', pullRequestClosed)
+  robot.on('pull_request.closed', deleteMerged)
   // app.on('issue_comment.created', async context => {
   //   app.log("comment")
   // })
@@ -59,14 +58,6 @@ module.exports = robot => {
     await assigner.init()
 
     await assigner.assign()
-  }
-
-  async function pullRequestClosed (context) {
-    const deleter = new Deleter(robot, context)
-
-    await deleter.init()
-
-    await labeler.delete()
   }
 
   async function issueEdited (context) {
