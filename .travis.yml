@@ -11,6 +11,6 @@ addons:
   sonarcloud:
     organization: sabuto
     token:
-      secure: ${DOCKER_USERNAME}
+       secure: "tKyyyruBsAi2OX/VLkEoCRlIqZTpY9yGZL6U1tYKeiaTaCwWuE46668rTFR6OnG729G4RsGEsZ4mFOgni6R6Un5qjKMmm2f6cDwQQK8P8WE1DrBmzpCZUsRMYav4ezYSwIJpjUCfAsb+rM3CN0PQXis17oSlkcnsmZ+b62Pm2akcwuDC6kyax1BIIrUeB0/diVH7fvxfUdnliGqXGB+++TjMQ8wMHBz2Q5jU+IF5eVwkSq07CBAKKl329SGbBm0QlNNWQumFLMDGU0Vf15QPBKIlKwNaS+Mf1M2smxfkQFJlDhUFVP70bEbF1hyJlqGkfWfv4diPg1TZd1LKkzYi1jk1O7mL8mbWorY6sIOXrDMGap+WbfT0FEGPseVlhROk9z6BkOAP3Gc6VEqfPcrvnN2wVzyEUW4WfibtQG0soQgexao1Cqb0hdnEcxMVGCTUh/Yr/8MKGALGvrczk4iYYyzV4aRCNbCOWhNHySAYalHlHMuICaxDZOi92dYYi/Lh6Nt7Lric65xeK9CFEOzKI75t8FYHllRQT8smembIxenjcSdMhnGP1eWwszFxkvDXn7jWpQNRMejCcusjyapdYsmRnnNc8EkCeJZtgnbu6BHFPQdypHyHvOwou3aUKz/jIDkT0L5fzySyB7jt/NTdE+Lm/XsZoZMCE5WyJdpdmJw="
 script:
   - sonar-scanner
