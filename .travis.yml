@@ -6,6 +6,9 @@ node_js:
 
 addons:
   chrome: stable
+  apt:
+    packages:
+      - libgconf-2-4
   sonarcloud:
     organization: sabuto
     token:
