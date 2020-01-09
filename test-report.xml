@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
+  <file path="/home/robd/dev/sabubot/test/index.test.js">
+    <testCase name="My Probot app Delete Branch functionality It does not recieve the `pull_request.closed` event Should NOT call the deleteReference Method" duration="111"/>
+    <testCase name="My Probot app Delete Branch functionality It recieves the `pull_request.closed` event Should call the deleteReference method" duration="25"/>
+  </file>
   <file path="/home/robd/dev/sabubot/test/lib/delete-merged-branch.test.js">
-    <testCase name="deleteMergedBranch function branch is merged from fork should log it didn&apos;t delete the branch" duration="10"/>
+    <testCase name="deleteMergedBranch function branch is merged from fork should log it didn&apos;t delete the branch" duration="6"/>
     <testCase name="deleteMergedBranch function branch is merged from fork Should NOT call deleteReference method" duration="2"/>
     <testCase name="deleteMergedBranch function branch is merged Should call the Deletereference method" duration="1"/>
-    <testCase name="deleteMergedBranch function branch is merged Should log the delete" duration="2"/>
+    <testCase name="deleteMergedBranch function branch is merged Should log the delete" duration="1"/>
     <testCase name="deleteMergedBranch function branch is merged deleteReference call fails Should log the error" duration="2"/>
-  </file>
-  <file path="/home/robd/dev/sabubot/test/index.test.js">
-    <testCase name="My Probot app Delete Branch functionality It does not recieve the `pull_request.closed` event Should NOT call the deleteReference Method" duration="126"/>
-    <testCase name="My Probot app Delete Branch functionality It recieves the `pull_request.closed` event Should call the deleteReference method" duration="26"/>
   </file>
 </testExecutions>
