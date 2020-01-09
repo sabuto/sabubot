@@ -48,4 +48,23 @@ describe('deleteMergedBranch function', () => {
       expect(context.github.git.deleteRef).not.toHaveBeenCalled()
     })
   })
+
+  describe('branch is merged', async () => {
+    beforeEach(async () => {
+    	context.payload.pull_request.merged = true
+    	await deleteMergedBranch(context)
+    })
+
+    it('Should call the Deletereference method', () => {
+      expect(context.github.git.deleteRef).toHaveBeenCalledWith({
+        owner,
+        ref: `heads/${ref}`,
+        repo
+      })
+    })
+
+    it('Should log the delete', () => {
+    	expect(context.log.info).toBeCalledWith(`Successfully deleted ${owner}/${repo}/${ref} which was merged`)
+    })
+  })
 })
