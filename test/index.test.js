@@ -1,11 +1,14 @@
 // https://github.com/andrewlock/auto-assign-issues/blob/master/test/auto-assign-issue.test.ts
 
-const nock = require('nock')
+// const nock = require('nock')
 // Requiring our app implementation
 const myProbotApp = require('..')
 const { createProbot } = require('probot')
 // Requiring our fixtures
 const payload = require('./fixtures/issues.opened')
+const deleteMergedBranch = require('./lib/delete-merged-branch')
+
+jest.mock('../lib/deleter', () => jest.fn())
 
 describe('My Probot app', () => {
   let probot
@@ -14,16 +17,38 @@ describe('My Probot app', () => {
     nock.disableNetConnect()
     probot = createProbot({ id: 1, cert: 'test', githubToken: 'test' })
     // Load our app into probot
-    probot.load(myProbotApp)
+    const app = probot.load(myProbotApp)
+    app.app = { getSignedJsonWebToken: () => 'test'}
   })
 
-  test('assigns repo owner when issue is created or edited when no assignee is present', async () => {
+  describe('Delete Branch functionality', () => {
+    describe('It does not recieve the `pull_request.closed` event', () => {
+      beforeEach(async () => {
+        const name = 'pull_request'
+        await probot.recieve({
+          name,
+          payload: {
+            ...payload,
+            action: 'opened'
+          }
+        })
+      })
 
-  })
+      it('Should NOT call the deleteReference Method', () => {
+        expect(deleteMergedBranch).not.toHaveBeenCalled()
+      })
+    })
 
-  afterEach(() => {
-    nock.cleanAll()
-    nock.enableNetConnect()
+    describe('It recieves the `pull_request.closed` event', () => {
+      beforeEach(async () => {
+        const name = 'pull_request'
+        await probot.recieve({ name, payload })
+      })
+
+      it('Should call the deleteReference method', () => {
+        expect(deleteMergedBranch).toHaveBeenCalled()
+      })
+    })
   })
 })
 
