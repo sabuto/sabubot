@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/robd/dev/sabubot/test/index.test.js">
+  </file>
+  <file path="/home/robd/dev/sabubot/test/lib/delete-merged-branch.test.js">
+    <testCase name="deleteMergedBranch function branch is merged from fork should log it didn&apos;t delete the branch" duration="9"/>
+    <testCase name="deleteMergedBranch function branch is merged from fork Should NOT call deleteReference method" duration="1"/>
+    <testCase name="deleteMergedBranch function branch is merged Should call the Deletereference method" duration="1"/>
+    <testCase name="deleteMergedBranch function branch is merged Should log the delete" duration="0"/>
+    <testCase name="deleteMergedBranch function branch is merged deleteReference call fails Should log the error" duration="1"/>
+  </file>
+</testExecutions>
