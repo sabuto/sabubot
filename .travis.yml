@@ -15,3 +15,5 @@ jobs:
     - stage: Preflight
       script: npm run test
       script: sonar-scanner
+    - stage: Deploy
+      script: npx glitch-deploy
