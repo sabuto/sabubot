@@ -64,7 +64,18 @@ describe('deleteMergedBranch function', () => {
     })
 
     it('Should log the delete', () => {
-    	expect(context.log.info).toBeCalledWith(`Successfully deleted ${owner}/${repo}/${ref} which was merged`)
+    	expect(context.log.info).toBeCalledWith(`Successfully deleted ${owner}/${repo}/heads/${ref} which was merged`)
+    })
+
+    describe('deleteReference call fails', () => {
+      beforeEach(async () => {
+        context.github.git.deleteRef = jest.fn().mockReturnValue(Promise.reject(new Error()))
+        await deleteMergedBranch(context)
+      })
+
+      it('Should log the error', () => {
+      	expect(context.log.warn).toBeCalledWith(expect.any(Error), `Failed to delete ${owner}/${repo}/heads/${ref}`)
+      })
     })
   })
 })
