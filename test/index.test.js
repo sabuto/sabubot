@@ -14,7 +14,6 @@ describe('My Probot app', () => {
   let probot
 
   beforeEach(() => {
-    nock.disableNetConnect()
     probot = createProbot({ id: 1, cert: 'test', githubToken: 'test' })
     // Load our app into probot
     const app = probot.load(myProbotApp)
@@ -25,7 +24,7 @@ describe('My Probot app', () => {
     describe('It does not recieve the `pull_request.closed` event', () => {
       beforeEach(async () => {
         const name = 'pull_request'
-        await probot.recieve({
+        await probot.receive({
           name,
           payload: {
             ...payload,

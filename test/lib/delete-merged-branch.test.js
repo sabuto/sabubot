@@ -1,5 +1,5 @@
 const deleteMergedBranch = require('../../lib/deleter')
-const payload = require('../fixtures/pull-request.closed')
+const payload = require('../fixtures/pull_request.closed')
 
 describe('deleteMergedBranch function', () => {
 	let context
