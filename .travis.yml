@@ -5,3 +5,11 @@ node_js:
   - "8.10"
   - "10"
   - "12"
+
+addons:
+  sonarcloud:
+    organization: sabuto
+    token:
+      secure: ${DOCKER_USERNAME}
+script:
+  - sonar-scanner
