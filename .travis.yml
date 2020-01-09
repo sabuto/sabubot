@@ -9,7 +9,7 @@ addons:
   apt:
     packages:
       - libgconf-2-4
-      - libsecret-1
+      - libsecret-1-0
   sonarcloud:
     organization: sabuto
     token:
