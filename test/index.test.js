@@ -5,8 +5,8 @@
 const myProbotApp = require('..')
 const { createProbot } = require('probot')
 // Requiring our fixtures
-const payload = require('./fixtures/issues.opened')
-const deleteMergedBranch = require('./lib/delete-merged-branch')
+const payload = require('./fixtures/pull_request.closed')
+const deleteMergedBranch = require('../lib/deleter')
 
 jest.mock('../lib/deleter', () => jest.fn())
 
