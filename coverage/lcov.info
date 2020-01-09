@@ -1,5 +1,5 @@
 TN:
-SF:/home/robd/dev/sabubot/index.js
+SF:/Volumes/Work et al/dev/sabubot/index.js
 FN:12,(anonymous_0)
 FN:16,(anonymous_1)
 FN:22,(anonymous_2)
@@ -42,7 +42,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/lib/assigner.js
+SF:/Volumes/Work et al/dev/sabubot/lib/assigner.js
 FN:4,(anonymous_0)
 FN:11,(anonymous_1)
 FN:26,(anonymous_2)
@@ -99,7 +99,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/lib/closer.js
+SF:/Volumes/Work et al/dev/sabubot/lib/closer.js
 FN:4,(anonymous_0)
 FN:14,(anonymous_1)
 FN:98,(anonymous_2)
@@ -186,7 +186,7 @@ BRF:19
 BRH:0
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/lib/deleter.js
+SF:/Volumes/Work et al/dev/sabubot/lib/deleter.js
 FN:1,(anonymous_0)
 FNF:1
 FNH:1
@@ -224,7 +224,7 @@ BRF:8
 BRH:5
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/lib/labeler.js
+SF:/Volumes/Work et al/dev/sabubot/lib/labeler.js
 FN:6,(anonymous_0)
 FN:14,(anonymous_1)
 FN:31,(anonymous_2)
@@ -335,7 +335,7 @@ BRF:22
 BRH:0
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/lib/mover.js
+SF:/Volumes/Work et al/dev/sabubot/lib/mover.js
 FN:6,(anonymous_0)
 FN:16,(anonymous_1)
 FN:236,(anonymous_2)
@@ -602,7 +602,7 @@ BRF:70
 BRH:0
 end_of_record
 TN:
-SF:/home/robd/dev/sabubot/test/fixtures/pull_request.closed
+SF:/Volumes/Work et al/dev/sabubot/test/fixtures/pull_request.closed
 FNF:0
 FNH:0
 DA:1,2

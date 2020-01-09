@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578587289688" clover="3.2.0">
-  <project timestamp="1578587289688" name="All files">
+<coverage generated="1578594610015" clover="3.2.0">
+  <project timestamp="1578594610015" name="All files">
     <metrics statements="335" coveredstatements="42" conditionals="123" coveredconditionals="5" methods="46" coveredmethods="2" elements="504" coveredelements="49" complexity="0" loc="335" ncloc="335" packages="3" files="7" classes="7"/>
     <package name="sabubot">
       <metrics statements="24" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
-      <file name="index.js" path="/home/robd/dev/sabubot/index.js">
+      <file name="index.js" path="/Volumes/Work et al/dev/sabubot/index.js">
         <metrics statements="24" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -34,7 +34,7 @@
     </package>
     <package name="sabubot.lib">
       <metrics statements="310" coveredstatements="28" conditionals="123" coveredconditionals="5" methods="41" coveredmethods="1"/>
-      <file name="assigner.js" path="/home/robd/dev/sabubot/lib/assigner.js">
+      <file name="assigner.js" path="/Volumes/Work et al/dev/sabubot/lib/assigner.js">
         <metrics statements="32" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -69,7 +69,7 @@
         <line num="58" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
       </file>
-      <file name="closer.js" path="/home/robd/dev/sabubot/lib/closer.js">
+      <file name="closer.js" path="/Volumes/Work et al/dev/sabubot/lib/closer.js">
         <metrics statements="49" coveredstatements="2" conditionals="19" coveredconditionals="0" methods="5" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -121,7 +121,7 @@
         <line num="116" count="0" type="stmt"/>
         <line num="119" count="0" type="stmt"/>
       </file>
-      <file name="deleter.js" path="/home/robd/dev/sabubot/lib/deleter.js">
+      <file name="deleter.js" path="/Volumes/Work et al/dev/sabubot/lib/deleter.js">
         <metrics statements="19" coveredstatements="17" conditionals="8" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
@@ -143,7 +143,7 @@
         <line num="24" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="26" count="1" type="stmt"/>
       </file>
-      <file name="labeler.js" path="/home/robd/dev/sabubot/lib/labeler.js">
+      <file name="labeler.js" path="/Volumes/Work et al/dev/sabubot/lib/labeler.js">
         <metrics statements="60" coveredstatements="3" conditionals="22" coveredconditionals="0" methods="10" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -206,7 +206,7 @@
         <line num="126" count="0" type="stmt"/>
         <line num="128" count="0" type="stmt"/>
       </file>
-      <file name="mover.js" path="/home/robd/dev/sabubot/lib/mover.js">
+      <file name="mover.js" path="/Volumes/Work et al/dev/sabubot/lib/mover.js">
         <metrics statements="150" coveredstatements="4" conditionals="70" coveredconditionals="0" methods="19" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -362,7 +362,7 @@
     </package>
     <package name="sabubot.test.fixtures">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="pull_request.closed" path="/home/robd/dev/sabubot/test/fixtures/pull_request.closed">
+      <file name="pull_request.closed" path="/Volumes/Work et al/dev/sabubot/test/fixtures/pull_request.closed">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
       </file>

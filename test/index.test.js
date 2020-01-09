@@ -21,7 +21,7 @@ describe('My Probot app', () => {
   })
 
   describe('Delete Branch functionality', () => {
-    describe('It does not recieve the `pull_request.closed` event', () => {
+    describe('It does not receive the `pull_request.closed` event', () => {
       beforeEach(async () => {
         const name = 'pull_request'
         await probot.receive({
