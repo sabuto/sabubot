@@ -41,7 +41,7 @@ describe('My Probot app', () => {
     describe('It recieves the `pull_request.closed` event', () => {
       beforeEach(async () => {
         const name = 'pull_request'
-        await probot.recieve({ name, payload })
+        await probot.receive({ name, payload })
       })
 
       it('Should call the deleteReference method', () => {

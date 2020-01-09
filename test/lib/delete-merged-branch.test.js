@@ -9,7 +9,7 @@ describe('deleteMergedBranch function', () => {
 	let repo
 
 	beforeEach(() => {
-		deleteRef = jest.fn().mocskReturnValue(Promise.resolve())
+		deleteRef = jest.fn().mockReturnValue(Promise.resolve())
 		context = {
 			config: jest.fn((_, defaults) => defaults),
 			log: {
