@@ -38,7 +38,7 @@ describe('deleteMergedBranch function', () => {
       context.payload.pull_request.head.repo.id = 100
       context.payload.pull_request.head.label = 'foo:bar'
       await deleteMergedBranch(context)
-  })
+    })
 
     it('should log it didn\'t delete the branch', () => {
       expect(context.log.info).toBeCalledWith(`Closing PR from fork. keeping ${context.payload.pull_request.head.label}`)
@@ -51,8 +51,8 @@ describe('deleteMergedBranch function', () => {
 
   describe('branch is merged', async () => {
     beforeEach(async () => {
-    	context.payload.pull_request.merged = true
-    	await deleteMergedBranch(context)
+      context.payload.pull_request.merged = true
+      await deleteMergedBranch(context)
     })
 
     it('Should call the Deletereference method', () => {
@@ -64,7 +64,7 @@ describe('deleteMergedBranch function', () => {
     })
 
     it('Should log the delete', () => {
-    	expect(context.log.info).toBeCalledWith(`Successfully deleted ${owner}/${repo}/heads/${ref} which was merged`)
+      expect(context.log.info).toBeCalledWith(`Successfully deleted ${owner}/${repo}/heads/${ref} which was merged`)
     })
 
     describe('deleteReference call fails', () => {
@@ -74,7 +74,7 @@ describe('deleteMergedBranch function', () => {
       })
 
       it('Should log the error', () => {
-      	expect(context.log.warn).toBeCalledWith(expect.any(Error), `Failed to delete ${owner}/${repo}/heads/${ref}`)
+        expect(context.log.warn).toBeCalledWith(expect.any(Error), `Failed to delete ${owner}/${repo}/heads/${ref}`)
       })
     })
   })
