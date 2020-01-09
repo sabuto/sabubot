@@ -4,12 +4,10 @@ node_js:
   - "10"
   - "12"
 
+before_script:
+  - npm prune
+
 addons:
-  chrome: stable
-  apt:
-    packages:
-      - libgconf-2-4
-      - libsecret-1-0
   sonarcloud:
     organization: sabuto
     token:
@@ -21,4 +19,4 @@ jobs:
       script: npm run test
       script: sonar-scanner
     - stage: Deploy
-      script: npx glitch-deploy
+      script: npx sync-glitch-cli
