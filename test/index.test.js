@@ -17,7 +17,7 @@ describe('My Probot app', () => {
     probot = createProbot({ id: 1, cert: 'test', githubToken: 'test' })
     // Load our app into probot
     const app = probot.load(myProbotApp)
-    app.app = { getSignedJsonWebToken: () => 'test'}
+    app.app = { getSignedJsonWebToken: () => 'test' }
   })
 
   describe('Delete Branch functionality', () => {
