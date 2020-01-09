@@ -13,6 +13,5 @@ addons:
 jobs:
   include:
     - stage: Preflight
-      script: 
-        - npm run test
-        - sonar-scanner
+      script: npm run test
+      script: sonar-scanner
