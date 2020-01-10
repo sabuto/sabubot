@@ -1,6 +1,6 @@
-const commands = require('probot-commands')
-const Labeler = require('./lib/labeler')
-const Assigner = require('./lib/assigner')
+//const commands = require('probot-commands')
+//const Labeler = require('./lib/labeler')
+//const Assigner = require('./lib/assigner')
 const Mover = require('./lib/mover')
 const Closer = require('./lib/closer')
 const deleteMerged = require('./lib/deleter')
@@ -50,7 +50,7 @@ module.exports = robot => {
   // https://probot.github.io/docs/development/
 
   async function issueOpened (context) {
-    const labeler = new Labeler(robot, context)
+    //const labeler = new Labeler(robot, context)
     // const assigner = new Assigner(robot.log, context)
 
     await assignOwner(context)
