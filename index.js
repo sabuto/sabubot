@@ -53,7 +53,7 @@ module.exports = robot => {
     const labeler = new Labeler(robot, context)
     // const assigner = new Assigner(robot.log, context)
 
-    await assignOwner()
+    await assignOwner(context)
 
     // await labeler.init()
 
