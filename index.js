@@ -55,9 +55,9 @@ module.exports = robot => {
 
     assignOwner
 
-    await labeler.init()
+    // await labeler.init()
 
-    await labeler.label()
+    // await labeler.label()
 
     // await assigner.init()
 
