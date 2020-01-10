@@ -5,6 +5,8 @@ const Mover = require('./lib/mover')
 const Closer = require('./lib/closer')
 const deleteMerged = require('./lib/deleter')
 
+const assignOwner = require('./lib/assign-owner')
+
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
@@ -49,15 +51,17 @@ module.exports = robot => {
 
   async function issueOpened (context) {
     const labeler = new Labeler(robot, context)
-    const assigner = new Assigner(robot.log, context)
+    // const assigner = new Assigner(robot.log, context)
+
+    assignOwner
 
     await labeler.init()
 
     await labeler.label()
 
-    await assigner.init()
+    // await assigner.init()
 
-    await assigner.assign()
+    // await assigner.assign()
   }
 
   async function issueEdited (context) {
