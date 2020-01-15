@@ -1,10 +1,11 @@
 const commands = require('probot-commands')
 // const Labeler = require('./lib/labeler')
 const Mover = require('./lib/mover')
-const Closer = require('./lib/closer')
+
 const deleteMerged = require('./lib/deleter')
 
 const assignOwner = require('./lib/assign-owner')
+const closeIssue = require('./lib/close-issue')
 
 /**
  * This is the main entrypoint to your Probot app
@@ -20,11 +21,7 @@ module.exports = robot => {
     await mover.init()
   })
 
-  commands(robot, 'close', async (context, command) => {
-    const closer = new Closer(robot, context, command)
-
-    await closer.init()
-  })
+  commands(robot, 'close', closeIssue)
 
   // app.on('push', async context => {
   //   app.log(context)
