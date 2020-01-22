@@ -46,8 +46,9 @@ describe('My Probot app', () => {
         const name = 'issue_comment'
         await probot.receive({ name, comment })
 
-      it('Should call the assignOwner Method', () => {
-        expect(assignOwner).toHaveBeenCalled()
+        it('Should call the assignOwner Method', () => {
+          expect(assignOwner).toHaveBeenCalled()
+        })
       })
     })
   })
