@@ -7,6 +7,8 @@ const deleteMerged = require('./lib/deleter')
 const assignOwner = require('./lib/assign-owner')
 const closeIssue = require('./lib/close-issue')
 
+const Sabubot = require('./lib/robot')
+
 /**
  * This is the main entrypoint to your Probot app
  * @param {import('probot').Application} app
@@ -46,10 +48,12 @@ module.exports = robot => {
   // https://probot.github.io/docs/development/
 
   async function issueOpened (context) {
+    const sabubot = new Sabubot(context)
+    await sabubot.delete()
     // const labeler = new Labeler(robot, context)
     // const assigner = new Assigner(robot.log, context)
 
-    await assignOwner(context)
+    // await assignOwner(context)
 
     // await labeler.init()
 
