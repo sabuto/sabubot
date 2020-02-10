@@ -49,6 +49,7 @@ module.exports = robot => {
 
   async function issueOpened (context) {
     const sabubot = new Sabubot(context)
+    await sabubot.getConfig()
     await sabubot.delete()
     // const labeler = new Labeler(robot, context)
     // const assigner = new Assigner(robot.log, context)
