@@ -7,11 +7,14 @@ const { createProbot } = require('probot')
 // Requiring our fixtures
 const payload = require('./fixtures/pull_request.closed')
 const comment = require('./fixtures/issue_comment.created')
+const closeComment = require('./fixtures/close_comment.created')
 const deleteMergedBranch = require('../lib/deleter')
 const assignOwner = require('../lib/assign-owner')
+const closeIssue = require('../lib/close-issue')
 
 jest.mock('../lib/deleter', () => jest.fn())
 jest.mock('../lib/assign-owner', () => jest.fn())
+jest.mock('../lib/close-issue', () => jest.fn())
 
 describe('My Probot app', () => {
   let probot
@@ -21,6 +24,42 @@ describe('My Probot app', () => {
     // Load our app into probot
     probot.load(myProbotApp)
     // app.app = { getSignedJsonWebToken: () => 'test' }
+  })
+
+  describe('Delete Comment functionality', () => {
+    describe('It does not receive the `issue_comment.created` event', () => {
+      beforeEach(async () => {
+        const name = 'issue_comment'
+        await probot.receive({
+          name,
+          payload: {
+            ...closeComment,
+            action: 'edited'
+          }
+        })
+      })
+
+      it('Should NOT call the `closeIssue` Method', () => {
+        expect(closeIssue).not.toHaveBeenCalled()
+      })
+    })
+
+    describe('It does receive the `issue_comment.created` event', () => {
+      beforeEach(async () => {
+        const name = 'issue_comment'
+        await probot.receive({
+          name,
+          payload: {
+            ...closeComment,
+            action: 'created'
+          }
+        })
+      })
+
+      it('Should Call the `closeIssue` Method', () => {
+        expect(closeIssue).toHaveBeenCalled()
+      })
+    })
   })
 
   describe('Assign Owner functionality', () => {
@@ -77,9 +116,9 @@ describe('My Probot app', () => {
         await probot.receive({ name, payload })
       })
 
-      it('Should call the deleteReference method', () => {
-        expect(deleteMergedBranch).toHaveBeenCalled()
-      })
+      // it('Should call the deleteReference method', () => {
+      //   expect(deleteMergedBranch).toHaveBeenCalled()
+      // })
     })
   })
 })

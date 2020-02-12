@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="S:\laragon\www\sabubot\test\index.test.js">
-    <testCase name="My Probot app Assign Owner functionality It does not receive the `issue_comment.created` event Should NOT call the assignOwner Method" duration="1"/>
-    <testCase name="My Probot app Close issue functionality It does not recieve the issue_comment.created event Should NOT call the closeIssue Method" duration="0"/>
-    <testCase name="My Probot app Delete Branch functionality It does not receive the `pull_request.closed` event Should NOT call the deleteReference Method" duration="0"/>
-    <testCase name="My Probot app Delete Branch functionality It recieves the `pull_request.closed` event Should call the deleteReference method" duration="0"/>
+  <file path="S:\laragon\www\sabubot\test\lib\close-issue.test.js">
+    <testCase name="closeIssue from comment function User has permissions but issue is locked Should log it couldn&apos;t delete the comment" duration="11">
+      <failure message="TypeError: Cannot read property &apos;owner&apos; of undefined"><![CDATA[TypeError: Cannot read property 'owner' of undefined
+    at closeIssue (S:\laragon\www\sabubot\lib\close-issue.js:21:21)
+    at Object.<anonymous> (S:\laragon\www\sabubot\test\lib\close-issue.test.js:51:13)
+    at Object.asyncJestLifecycle (S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:53:37)
+    at S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (<anonymous>)
+    at mapper (S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)]]></failure>
+      <failure message="Error: expect(jest.fn()).toBeCalledWith(...expected)"><![CDATA[Error: expect(jest.fn()).toBeCalledWith(...expected)
+
+Expected: "Cannot delete comment on a locked thread."
+
+Number of calls: 0
+    at Object.<anonymous> (S:\laragon\www\sabubot\test\lib\close-issue.test.js:55:32)
+    at Object.asyncJestTest (S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:100:37)
+    at S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (<anonymous>)
+    at mapper (S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at S:\laragon\www\sabubot\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:94:5)]]></failure>
+    </testCase>
   </file>
 </testExecutions>
