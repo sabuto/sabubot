@@ -15,7 +15,6 @@ describe('closeIssue from comment function', () => {
     getCollaboratorPermissionLevel = jest.fn().mockReturnValue(Promise.resolve())
 
     context = {
-      repo: jest.fn( (_, source)=> source),
       issue: {
         number: 123
       },
