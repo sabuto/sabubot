@@ -18,7 +18,8 @@
     "start": "probot run ./index.js",
     "lint": "standard",
     "test": "jest && standard",
-    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+    "test:watch": "jest --watchAll --notify --notifyMode=change --coverage",
+    "cov": "jest --coverage"
   },
   "dependencies": {
     "moment": "2.24.0",
